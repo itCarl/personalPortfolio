@@ -9,6 +9,8 @@ class ProjectController extends Controller
 {
     public function show() 
     {
+        // TODO  get all Projects and display them 
+
         return view("projects");
     }
 }
