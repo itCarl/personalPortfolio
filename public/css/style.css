@@ -1,0 +1,115 @@
+:root {
+    --clr-primary: #000;
+    --clr-secondary: #000;
+
+    --clr-font-primary: #000;
+    --clr-font-secondary: #fff;
+
+    --clr-background-primary: #93CAED;
+    --clr-background-secondary: #181A18;
+}
+
+/* 
+*  TABLE OF CONTENTS
+*  
+*  1.0 - Reset
+*  2.0 - Globals
+*  3.0 - Typography
+*  4.0 - Layouts
+*    4.1 -
+*    4.2 -
+*  5.0 - Components
+*    5.1 - Buttons
+*    5.2 - Forms
+*  6.0 - Utillity
+*
+*/
+
+
+
+/*  ================================
+        1.0 Reset
+    ================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*  ================================
+        2.0 Globals
+    ================================ */
+
+::selection {
+    color: var(--clr-font-secondary);
+    background: var(--clr-font-primary);
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    color: var(--clr-primary);
+    background:  linear-gradient(45deg, var(--clr-background-secondary) 50%, var(--clr-background-primary)  50%);  /* TODO make it look better on smaller screen sizes */
+}
+
+body::before { /* use pseudo element to be able to change the texture visibility */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: .5;
+    background: url("/images/fleck-white.png");
+}
+
+
+
+/*  ================================
+        3.0 Typography
+    ================================ */
+
+.content h1 {
+    color: var(--clr-font-primary);
+    font-family: 'Montserrat', Arial;
+    background-color: var(--clr-font-secondary);
+    padding: .5em;
+}
+
+
+/*  ================================
+        4.0 Layouts
+    ================================ */
+
+.contentWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*  ================================
+        5.0 Components
+    ================================ */
+
+
+
+/*  ================================
+        6.0 Utillity
+    ================================ */
