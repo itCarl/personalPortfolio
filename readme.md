@@ -25,3 +25,4 @@ a bit more information will come soon...
 ## :hearts: Thanks to 
 
 - [Laravel](https://laravel.com/)
+- [FlexMasonry By Gilbert Pellegrom](https://github.com/gilbitron/flexmasonry)

@@ -15,10 +15,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-/*Route::get('/projects', function () {
-    return view('projects');
-});*/ 
-
-/*
-Route::get('/', 'home@homeController');
-*/
+Route::get('/projects', 'ProjectController@show');

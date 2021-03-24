@@ -9,10 +9,10 @@
 
     <div class="masonry-wrapper">
         <div class="masonry">
-            @for ($i = 0; $i < 30; $i++)
+            @for ($i = 0; $i < 40; $i++)
 
             <div class="masonry-item">
-                <img src="https://picsum.photos/<?= rand(200, 350) ?>/<?= rand(300, 350) ?>?image={{10*$i}}" alt="Dummy Image" class="masonry-content">
+                <img src="https://picsum.photos/<?= rand(200, 350) ?>/<?= rand(300, 350) ?>?image=<?= rand(1, 10)*$i ?>" alt="Dummy Image">
             </div>
 
             @endfor

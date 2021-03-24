@@ -190,3 +190,18 @@ span.icon {
 /*  ================================
         6.0 Utillity
     ================================ */
+
+
+    
+.masonry-item {
+    padding: 2px; 
+}
+
+.masonry-item img {
+    width: 100%;
+}
+
+.masonry-wrapper {
+    padding: 1.5em;
+    margin: 0 auto;
+}
