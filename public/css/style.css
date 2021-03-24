@@ -5,7 +5,7 @@
     --clr-font-primary: #000;
     --clr-font-secondary: #fff;
 
-    --clr-background-primary: #93CAED;
+    --clr-background-primary: #93CAED ;
     --clr-background-secondary: #181A18;
 }
 
@@ -16,7 +16,7 @@
 *  2.0 - Globals
 *  3.0 - Typography
 *  4.0 - Layouts
-*    4.1 -
+*    4.1 - Navigation
 *    4.2 -
 *  5.0 - Components
 *    5.1 - Buttons
@@ -38,6 +38,10 @@
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 
 /*  ================================
@@ -50,25 +54,16 @@
 }
 
 html,
-body {
+body,
+.splitBackground {
     height: 100vh;
     width: 100%;
 }
 
 body {
+    position: relative;
     color: var(--clr-primary);
-    background:  linear-gradient(45deg, var(--clr-background-secondary) 50%, var(--clr-background-primary)  50%);  /* TODO make it look better on smaller screen sizes */
-}
-
-body::before { /* use pseudo element to be able to change the texture visibility */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    opacity: .5;
-    background: url("/images/fleck-white.png");
+    /*border: 10px solid #fff;*/
 }
 
 
@@ -81,32 +76,114 @@ body::before { /* use pseudo element to be able to change the texture visibility
     color: var(--clr-font-primary);
     font-family: 'Montserrat', Arial;
     background-color: var(--clr-font-secondary);
-    padding: .5em;
+    padding: .3em .8em;
+    font-weight: 900;
+    border-radius: .15rem;
+    box-shadow: 15px 15px rgba(0,0,0,0.2);
+    vertical-align: middle;
 }
+
 
 
 /*  ================================
         4.0 Layouts
     ================================ */
 
-.contentWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.splitBackground {  /* TODO make it look better on smaller screen sizes */
+    background:  linear-gradient(45deg, var(--clr-background-secondary) 50%, var(--clr-background-primary)  50%);
 }
+
+.splitBackground::before { /* use pseudo element to be able to change the texture visibility */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: .5;
+    background: url("/images/fleck-white.png");
+}
+
 
 .content {
     position: absolute;
     margin: 0 auto;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.content .heading {
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+
+    /**
+     *      4.1 Navigation
+     */
+
+nav {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav .nav-item {
+    display: inline;
+    margin-left: -1px;
+    width: 200px;
+}
+
+.nav-item a {
+    --nav-border-radius: .2rem;
+
+    text-decoration: none;
+    color: var(--clr-font-secondary);
+    font-family: 'Nunito';
+    padding: .7em 1.4em;
+    text-align: center;
+    transition: background-color .7s;
+    border: 2px solid #fff;
+    border-right: 0;
+    width: 100px;
+}
+
+.nav-item:first-child a {
+    border-radius: var(--nav-border-radius) 0 0 var(--nav-border-radius);
+} 
+
+.nav-item:last-child a {
+    border-right: 2px solid #fff;
+    border-radius: 0 var(--nav-border-radius) var(--nav-border-radius) 0;
+}
+
+.nav-item a:hover {
+    color: var(--clr-font-primary);
+    background-color: var(--clr-font-secondary);
+}
+
+.nav-item a::selection { /* might be bad UX but helps the UI for sure */
+    color: var(--clr-font-primary);
+    background-color: var(--clr-font-secondary);
+}
+
 
 
 /*  ================================
         5.0 Components
     ================================ */
+
+span.icon {
+    font-size: 1.3em;
+    /*vertical-align: middle; */
+}
 
 
 

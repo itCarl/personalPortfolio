@@ -5,10 +5,31 @@
     @include('includes.head', ['title' => 'Home'])
 </head>
 <body>
-    <div class="contentWrapper">
+    <div class="splitBackground">
         <div class="content">
-            <h1>Hi, i'm Max</h1>
+            <div class="heading">
+                <h1>
+                    Hey, i'm Max
+                    <span class="icon">✌</span>
+                </h1>
+            </div>
         </div>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="{{ url('#') }}"> About </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/projects') }}"> Projects </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('#') }}"> Gallery </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('#') }}"> Contact </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </body>
 </html>

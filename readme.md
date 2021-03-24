@@ -24,4 +24,4 @@ a bit more information will come soon...
 
 ## :hearts: Thanks to 
 
-- Laravel 
+- [Laravel](https://laravel.com/)
