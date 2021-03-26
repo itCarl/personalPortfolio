@@ -31,5 +31,8 @@
             </ul>
         </nav>
     </div>
+
+    {{-- Load all Javascript files --}}
+    @include('includes.scripts')
 </body>
 </html>
