@@ -19,7 +19,6 @@ a bit more information will come soon...
 - [x] make it more beatiful
 - [ ] maybe standalone with pure html, css, js
 - [ ] possibly adding some fancy subtle animations 
-- [ ] using as a "template" for upcoming portfolios maybe
 - [ ] more features
 
 ## :hearts: Thanks to 
