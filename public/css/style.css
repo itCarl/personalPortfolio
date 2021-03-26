@@ -55,8 +55,9 @@ img {
 
 html,
 body,
-.splitBackground {
-    /*height: 100vh; /* Fallback */
+.splitBackground,
+.splitBackground::before {
+    height: 100vh; /* Fallback */
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
 }
@@ -100,8 +101,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100%;
     opacity: .5;
     background: url("../images/fleck-white.png");
 }
