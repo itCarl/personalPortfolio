@@ -56,7 +56,8 @@ img {
 html,
 body,
 .splitBackground {
-    height: 100vh;
+    height: 100vh; /* Fallback */
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
 }
 

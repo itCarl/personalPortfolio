@@ -1,3 +1,7 @@
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
 FlexMasonry.init('.masonry', {
     responsive: true,
 
@@ -11,3 +15,4 @@ FlexMasonry.init('.masonry', {
     
     numCols: 5,
 });
+
