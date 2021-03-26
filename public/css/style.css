@@ -81,6 +81,7 @@ body {
     border-radius: .15rem;
     box-shadow: 15px 15px rgba(0,0,0,0.2);
     vertical-align: middle;
+    font-size: clamp(1.2rem, 7vw, 2rem); /* Fluid "responsive" text*/
 }
 
 
