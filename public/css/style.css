@@ -146,7 +146,7 @@ nav .nav-item {
     text-decoration: none;
     color: var(--clr-font-secondary);
     font-family: 'Nunito';
-    font-size: clamp(.5rem, 2vw, 1rem);
+    font-size: clamp(.7rem, 3vw, 1rem);
     padding: .7em 1.4em;
     text-align: center;
     transition: background-color .7s;
