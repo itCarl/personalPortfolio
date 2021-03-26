@@ -17,13 +17,13 @@
         <nav>
             <ul>
                 <li class="nav-item">
-                    <a href="{{ url('#') }}"> About </a>
+                    <a href="{{ url('/about') }}"> About </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ url('/projects') }}"> Projects </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('#') }}"> Gallery </a>
+                    <a href="{{ url('/') }}"> 3DP Gallery </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ url('#') }}"> Contact </a>

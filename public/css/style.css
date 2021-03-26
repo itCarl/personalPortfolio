@@ -83,7 +83,7 @@ body {
     border-radius: .15rem;
     box-shadow: 15px 15px rgba(0,0,0,0.2);
     vertical-align: middle;
-    font-size: clamp(1.2rem, 7vw, 2rem); /* Fluid "responsive" text*/
+    font-size: clamp(1.1rem, 6vw, 2rem); /* Fluid "responsive" text*/
 }
 
 
@@ -128,18 +128,17 @@ body {
 nav {
     position: absolute;
     bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
 }
 
 nav ul {
     list-style: none;
+    text-align: center;
 }
 
 nav .nav-item {
     display: inline;
     margin-left: -1px;
-    width: 200px;
 }
 
 .nav-item a {
@@ -148,12 +147,12 @@ nav .nav-item {
     text-decoration: none;
     color: var(--clr-font-secondary);
     font-family: 'Nunito';
+    font-size: clamp(.5rem, 2vw, 1rem);
     padding: .7em 1.4em;
     text-align: center;
     transition: background-color .7s;
     border: 2px solid #fff;
     border-right: 0;
-    width: 100px;
 }
 
 .nav-item:first-child a {
