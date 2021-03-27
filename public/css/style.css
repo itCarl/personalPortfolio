@@ -1,12 +1,12 @@
 :root {
     --clr-primary: #000;
-    --clr-secondary: #000;
+    --clr-secondary: #fff;
 
-    --clr-font-primary: #000;
-    --clr-font-secondary: #fff;
+    --clr-link-primary: rgb(52, 152, 209);
+    --clr-link-secondary: #fff;
 
-    --clr-background-primary: #93CAED ;
-    --clr-background-secondary: #181A18;
+    --clr-background-primary: #FFF ;
+    --clr-background-secondary: #ACD1AF;
 }
 
 /* 
@@ -16,8 +16,8 @@
 *  2.0 - Globals
 *  3.0 - Typography
 *  4.0 - Layouts
-*    4.1 - Navigation
-*    4.2 -
+*    4.1 - '' Main '' - Section
+*    4.2 - Navigation
 *  5.0 - Components
 *    5.1 - Buttons
 *    5.2 - Forms
@@ -49,23 +49,46 @@ img {
     ================================ */
 
 ::selection {
-    color: var(--clr-font-secondary);
-    background: var(--clr-font-primary);
+    color: var(--clr-secondary);
+    background-color: var(--clr-primary);
 }
 
 html,
 body,
-.splitBackground,
-.splitBackground::before {
+body::before {
     height: 100vh; /* Fallback */
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
 }
 
 body {
-    position: relative;
     color: var(--clr-primary);
-    /*border: 10px solid #fff;*/
+    background-color: var(--clr-background-primary);
+    font-family: "inter var", sans-serif;
+    font-weight: 400;
+    letter-spacing: .03em;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .1;
+    background: url("../images/fleck-black.png");
+}
+
+a {
+    color: var(--clr-link-primary);
+    border-bottom: 1px solid;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.7em;
 }
 
 
@@ -74,115 +97,76 @@ body {
         3.0 Typography
     ================================ */
 
-.content h1 {
-    color: var(--clr-font-primary);
-    font-family: 'Montserrat', Arial;
-    background-color: var(--clr-font-secondary);
-    padding: .3em .8em;
-    font-weight: 900;
-    border-radius: .15rem;
-    box-shadow: 15px 15px rgba(0,0,0,0.2);
-    vertical-align: middle;
-    font-size: clamp(1.1rem, 6vw, 2rem); /* Fluid "responsive" text*/
-}
-
 
 /*  ================================
         4.0 Layouts
     ================================ */
 
-.splitBackground {  /* TODO make it look better on smaller screen sizes */
-    background:  linear-gradient(45deg, var(--clr-background-secondary) 50%, var(--clr-background-primary)  50%);
-}
-
-.splitBackground::before { /* use pseudo element to be able to change the texture visibility */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: .5;
-    background: url("../images/fleck-white.png");
-}
-
-
-.content {
-    position: absolute;
+div.wrapper {
+    max-width: 800px;
     margin: 0 auto;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top: 75px;
 }
 
-.content .heading {
-    text-align: center;
-    margin: 0 auto;
-    
+    /**
+     *      4.1 '' Main '' - Section
+     */
+section#main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
+
+.about {
+    max-width: 585px;
+    height: 260px;
+}
+
+.about p {
+    padding: 0 5em 1em 0;
+}
+
+p a {
+    padding-bottom: .2em;
+}
+
 
 
     /**
-     *      4.1 Navigation
+     *      4.2 Navigation
      */
 
 nav {
-    position: absolute;
-    bottom: 15%;
-    width: 100%;
 }
 
 nav ul {
+    position: relative;
     list-style: none;
-    text-align: center;
-}
-
-nav .nav-item {
-    display: inline;
-    margin-left: -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    text-align: right;
 }
 
 .nav-item a {
-    --nav-border-radius: .2rem;
-
-    text-decoration: none;
-    color: var(--clr-font-secondary);
+    color: var(--clr-primary);
+    border: 0;
     font-family: 'Nunito';
     font-size: clamp(.7rem, 3vw, 1rem);
     padding: .7em 1.4em;
-    text-align: center;
-    transition: background-color .7s;
-    border: 2px solid #fff;
-    border-right: 0;
 }
 
-.nav-item:first-child a {
-    border-radius: var(--nav-border-radius) 0 0 var(--nav-border-radius);
-} 
-
-.nav-item:last-child a {
-    border-right: 2px solid #fff;
-    border-radius: 0 var(--nav-border-radius) var(--nav-border-radius) 0;
-}
-
-.nav-item a:hover {
-    color: var(--clr-font-primary);
-    background-color: var(--clr-font-secondary);
-}
-
+.nav-item a:hover,
 .nav-item a::selection { /* might be bad UX but helps the UI for sure */
-    color: var(--clr-font-primary);
-    background-color: var(--clr-font-secondary);
+    border-right: 2px solid var(--clr-link-primary);
+    font-weight: bolder;
 }
-
 
 
 /*  ================================
         5.0 Components
     ================================ */
-
-span.icon {
-    font-size: 1.3em;
-    /*vertical-align: middle; */
-}
 
 
 
@@ -205,9 +189,10 @@ span.icon {
     margin: 0 auto;
 }
 
-
+/*
 @media screen and (max-width: 700px) {
-    .content {  /* center main text on mobile devices */
+    .content {
         top: 50%;
     }
 }
+*/

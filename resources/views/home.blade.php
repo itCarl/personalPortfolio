@@ -5,33 +5,45 @@
     @include('includes.head', ['title' => 'Home'])
 </head>
 <body>
-    <div class="splitBackground">
-        <div class="content">
-            <div class="heading">
+    <div class="wrapper">
+        <section id="main">
+            <div class="about">
                 <h1>
                     Hey, i'm Max
-                    <span class="icon">✌</span>
                 </h1>
+                <p>
+                    👋  I'm a student currently studying computer science at the 
+                    <a href="https://www.th-brandenburg.de/" target="_blank">THB</a>
+                    in Germany, Brandenburg an der Havel.
+                </p>
+                <p>                    
+                    You can find me spending a lot of free time 
+                    doing a lot of stuff on my computer.    
+                </p>
             </div>
+            
+            <nav>
+                <ul>
+                    <li class="nav-item">
+                        <a href="{{ url('/projects') }}"> Projects </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/gallery') }}"> Gallery </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/ideas') }}"> Project Ideas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('#') }}"> Contact </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <div class="links">
+            <a href="#" target="_blank">#1</a> 
+            <a href="#" target="_blank">#2</a>
         </div>
-        <nav>
-            <ul>
-                <li class="nav-item">
-                    <a href="{{ url('/about') }}"> About </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/projects') }}"> Projects </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/') }}"> 3DP Gallery </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('#') }}"> Contact </a>
-                </li>
-            </ul>
-        </nav>
     </div>
-
     {{-- Load all Javascript files --}}
     @include('includes.scripts')
 </body>
