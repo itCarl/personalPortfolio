@@ -9,10 +9,10 @@
         <section id="main">
             <div class="about">
                 <h1>
-                    Hey, i'm Max
+                    Hey, i'm Max 
                 </h1>
                 <p>
-                    👋  I'm a student currently studying computer science at the 
+                    A student currently studying computer science at the 
                     <a href="https://www.th-brandenburg.de/" target="_blank">THB</a>
                     in Germany, Brandenburg an der Havel.
                 </p>
@@ -39,10 +39,13 @@
                 </ul>
             </nav>
         </section>
-        <div class="links">
-            <a href="#" target="_blank">#1</a> 
-            <a href="#" target="_blank">#2</a>
-        </div>
+        <section id="social-links">
+            <div class="links">
+                <a href="#" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
     </div>
     {{-- Load all Javascript files --}}
     @include('includes.scripts')
