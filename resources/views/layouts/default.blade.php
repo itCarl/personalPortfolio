@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
     <meta name="description" content="Blubber Lounge Plaue, die einzig und wahre Shisha lounge in Brandenburg an der Havel" />
     <meta name="author" content="Maximilian Mewes" />
 

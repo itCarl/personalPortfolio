@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::view('/', 'home')->name('index');
 
 // CRUD (laravel resource) routes
 Route::resource('projects', 'ProjectDetailController');

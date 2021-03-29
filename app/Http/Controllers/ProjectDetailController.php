@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ProjectDetailModel;
 
 class ProjectDetailController extends Controller
 {
@@ -13,7 +14,9 @@ class ProjectDetailController extends Controller
      */
     public function index()
     {
-        return view("projects.index");
+        $projects = ProjectDetailModel::all()->sortByDesc('priority');
+
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -23,7 +26,9 @@ class ProjectDetailController extends Controller
      */
     public function create()
     {
-        //
+        $project = new ProjectDetailModel;
+
+        return view("projects.create", compact('project'));
     }
 
     /**
@@ -34,7 +39,9 @@ class ProjectDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       ProjectDetailModel::create($this->validateRequest());
+
+        return redirect('projects');
     }
 
     /**
@@ -56,7 +63,8 @@ class ProjectDetailController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = ProjectDetailModel::find($id);
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -68,7 +76,10 @@ class ProjectDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = ProjectDetailModel::find($id);
+        $project->update($this->validateRequest());
+
+        return redirect('projects/' . $project->id);
     }
 
     /**
@@ -80,5 +91,15 @@ class ProjectDetailController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function validateRequest()
+    {
+        return request()->validate([
+            'title'             => 'required|String|max:20',
+            'short_description' => 'required|max:100',
+            'description'       => 'required',
+            'tags'              => 'required',
+        ]);
     }
 }
