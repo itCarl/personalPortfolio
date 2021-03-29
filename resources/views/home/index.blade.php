@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    {{-- Include all necessary header components --}}
-    @include('includes.head', ['title' => 'Home'])
-</head>
-<body>
+@extends('layouts/default')
+
+@section('title', 'Home')
+
+@section('content')
+
     <div class="wrapper">
         <section id="main">
             <div class="about">
@@ -44,10 +43,11 @@
                 <a href="#" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
+                <a href="#" target="_blank">
+                    <i class="far fa-envelope"></i>
+                </a>
             </div>
         </section>
     </div>
-    {{-- Load all Javascript files --}}
-    @include('includes.scripts')
-</body>
-</html>
+
+@endsection

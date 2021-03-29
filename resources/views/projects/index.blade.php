@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    {{-- Include all necessary header components --}}
-    @include('includes.head', ['title' => 'Projects'])
-</head>
-<body>
-    {{-- Load all Projects here --}}
+@extends('layouts/default')
+
+@section('title', 'Projects')
+
+@section('content')
 
     <div class="masonry-wrapper">
         <div class="masonry">
@@ -18,8 +15,7 @@
             @endfor
         </div>    
     </div>
-    
-    {{-- Load all Javascript files --}}
-    @include('includes.scripts')
-</body>
-</html>
+
+    <div> <a href="{{ url('/') }}">Back</a></div>
+
+@endsection

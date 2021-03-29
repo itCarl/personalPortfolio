@@ -86,11 +86,7 @@ a {
     color: var(--clr-link-primary);
     border-bottom: 1px solid;
     text-decoration: none;
-}
-
-a:hover {
-    transition: all 0.3s ease-out;
-}
+}   
 
 p {
     line-height: 1.7em;
@@ -182,8 +178,11 @@ nav ul {
     top: 0;
 }
 
+.links a:first-child {
+    margin-left: 2px;
+}
+
 .links a:hover {
-    position: absolute;
     top: -10px;
     transition: all .3s ease-out;
 }
