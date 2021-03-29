@@ -1,5 +1,8 @@
 <div class="utility-bar">
     <div class="utility-bar-item">
+        {{ Auth::user()->name }}
+    </div>
+    <div class="utility-bar-item">
         <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">

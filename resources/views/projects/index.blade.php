@@ -23,7 +23,4 @@
             @endforeach
         </div>    
     </div>
-
-    <div> <a href="{{ url('/') }}">Back</a></div>
-
 @endsection

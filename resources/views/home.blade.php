@@ -27,13 +27,13 @@
                         <a href="{{ url('/projects') }}"> Projects </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/gallery') }}"> Gallery </a>
+                        <a href="{{ url('#') }}" class="link-disabled"> Gallery </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/ideas') }}"> Project Ideas </a>
+                        <a href="{{ url('#') }}" class="link-disabled"> Project Ideas </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('#') }}"> Contact </a>
+                        <a href="{{ url('#') }}" class="link-disabled"> Contact </a>
                     </li>
                 </ul>
             </nav>

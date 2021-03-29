@@ -5,8 +5,7 @@
     --clr-link-primary: rgb(52, 190, 40);
     --clr-link-secondary: #fff;
 
-    --clr-background-primary: #FFF ;
-    --clr-background-secondary: #ACD1AF;
+    --clr-background-primary: #FFF;
 }
 
 /* 
@@ -253,33 +252,41 @@ nav ul {
 }
 
 
+
+    /**
+     *      4.4 "Admin" Utility bar
+     */
 .utility-bar {
     position: fixed;
     bottom: 0;
     padding: 2em 4em;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row; 
     color: #fff !important;
     width: 100vw;
     background-color: #342D33;
-    vertical-align: middle;
 }
 
-
-
-    /**
-     *      4.4 "Admin" Utility bar
-     */
 .utility-bar-item {
     position: relative;
     color: #fff;
+    flex-grow: 3;
+}
+
+.utility-bar-item:first-child {
+    flex-grow: 1;
 }
 
 .utility-bar-item a {
     color: #fff;
     border: 0;
     font-weight: bolder;
+    transition: all .2s ease-in-out;
+}
+
+.utility-bar-item a:hover {
+    transform: scale(1.2);
 }
 
     
@@ -366,11 +373,28 @@ input.form__field:read-only + label.form__label::after {
     color: #fff;
 }
 
+    /**
+     *      5.2 Buttons
+     */
+.btn {
+    padding: 1em;
+}
+
 
 /*  ================================
         6.0 Utillity
     ================================ */
+.link-disabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
 
+.link-disabled:hover {
+    border: 0 !important;
+    font-weight: normal !important;
+}
 
 
 
@@ -383,3 +407,17 @@ input.form__field:read-only + label.form__label::after {
     }
 }
 */
+
+div#back {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: var(--clr-primary);
+    padding: 1em .5em;
+    border-radius: 2em 0 0 0;
+}
+
+div#back a {
+    border: 0;
+    color: #fff;
+}
