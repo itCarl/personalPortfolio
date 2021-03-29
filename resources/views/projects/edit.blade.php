@@ -8,7 +8,7 @@
             <h1> Edit "{{ $project->title }}" </h1>
             <form action="{{ route('projects.update', ['project' => $project]) }}" method="POST" autocomplete="off">
                 
-                {{ method_field('PATCH') }}
+                {{ method_field('PUT') }}
                 @include('projects.form')
 
                 <input type="submit" value="Bearbeiten">

@@ -50,7 +50,7 @@ class ProjectDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ProjectDetailModel $project)
     {
         //
     }
@@ -61,9 +61,11 @@ class ProjectDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProjectDetailModel $project)
     {
-        $project = ProjectDetailModel::find($id);
+        // not needed, using eloquent route model binding
+        // $project = ProjectDetailModel::findOrFail($id);
+
         return view('projects.edit', compact('project'));
     }
 
@@ -74,9 +76,9 @@ class ProjectDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ProjectDetailModel $project)
     {
-        $project = ProjectDetailModel::find($id);
+        // $project = ProjectDetailModel::findOrFail($id);
         $project->update($this->validateRequest());
 
         return redirect('projects/' . $project->id);
@@ -88,7 +90,7 @@ class ProjectDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ProjectDetailModel $project)
     {
         //
     }
