@@ -24,7 +24,7 @@ Route::resource('projects', 'ProjectDetailController');
 // disabeling certain routes gets available with laravel 5.7 and higher
 
 // Authentication Routes...
-$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+$this->get('4ebd0208-8328-5d69-8c44-ec50939c0967', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
