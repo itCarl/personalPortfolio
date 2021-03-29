@@ -28,6 +28,13 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
+
+    @auth
+        {{-- Get a "Admin" bar when logged in --}}
+        @include('includes.backend')
+    @endauth
+
+
     @yield('content')
 
     {{-- Load all Javascript files --}}

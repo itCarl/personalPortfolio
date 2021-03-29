@@ -18,9 +18,10 @@
 *  4.0 - Layouts
 *    4.1 - '' Main '' - Section
 *    4.2 - Navigation
+*    4.3 - Masonry
 *  5.0 - Components
-*    5.1 - Buttons
-*    5.2 - Forms
+*    5.1 - Forms
+*    5.2 - Buttons
 *  6.0 - Utillity
 *
 */
@@ -78,10 +79,16 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: .1;
+    opacity: .2;
     background: url("../images/fleck-black.png");
     z-index: -1;
 }
+
+
+
+/*  ================================
+        3.0 Typography
+    ================================ */
 
 a {
     color: var(--clr-link-primary);
@@ -96,11 +103,6 @@ p {
 
 
 /*  ================================
-        3.0 Typography
-    ================================ */
-
-
-/*  ================================
         4.0 Layouts
     ================================ */
 
@@ -109,6 +111,8 @@ div.wrapper {
     margin: 0 auto;
     padding-top: 75px;
 }
+
+
 
     /**
      *      4.1 '' Main '' - Section
@@ -137,7 +141,6 @@ p a {
     /**
      *      4.2 Navigation
      */
-
 nav {
 }
 
@@ -198,52 +201,44 @@ nav ul {
 
 
 
-/*  ================================
-        5.0 Components
-    ================================ */
-
-
-
-/*  ================================
-        6.0 Utillity
-    ================================ */
-
-
+    /**
+     *      4.3 Masonry
+     */
 .masonry-wrapper {
     padding: 1.5em;
 }
-    
+        
 .masonry-item {
     position: relative;
     padding: .5em;
 }
-
+    
 .masonry-item img {
     width: 100%;
     display: block;
     /* vertical-align: middle */
 }
-
+    
 .masonry-item figure {
-	background: var(--clr-link-primary);
+    background: var(--clr-link-primary);
 }
-
+    
 .masonry-item figure img {
-	opacity: 1;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
-
+    
 .masonry-item figure:hover img {
-	opacity: .5;
+    opacity: .5;
 }
-
+    
 .masonry-item figure:hover .masonry-item-details {
     top: 50%;
     left: 50%;
     opacity: 1;
 }
-
+    
 .masonry-item-details {
     color: var(--clr-link-secondary);
     position: absolute;
@@ -258,16 +253,44 @@ nav ul {
 }
 
 
-
-
-/*
-@media screen and (max-width: 700px) {
-    .content {
-        top: 50%;
-    }
+.utility-bar {
+    position: fixed;
+    bottom: 0;
+    padding: 2em 4em;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row; 
+    color: #fff !important;
+    width: 100vw;
+    background-color: #342D33;
+    vertical-align: middle;
 }
-*/
 
+
+
+    /**
+     *      4.4 "Admin" Utility bar
+     */
+.utility-bar-item {
+    position: relative;
+    color: #fff;
+}
+
+.utility-bar-item a {
+    color: #fff;
+    border: 0;
+    font-weight: bolder;
+}
+
+    
+
+/*  ================================
+        5.0 Components
+    ================================ */
+
+    /**
+     *      5.1 Forms
+     */
 .form__group {
     position: relative;
     padding: 10px 0 0;
@@ -311,6 +334,7 @@ nav ul {
     border-image: linear-gradient(to right, var(--clr-link-primary) 30%, #11998e);
     border-image-slice: 1;
 }
+
 .form__field:focus ~ .form__label {
     position: absolute;
     top: 0;
@@ -341,3 +365,21 @@ input.form__field:read-only + label.form__label::after {
     padding: 1em;
     color: #fff;
 }
+
+
+/*  ================================
+        6.0 Utillity
+    ================================ */
+
+
+
+
+
+
+/*
+@media screen and (max-width: 700px) {
+    .content {
+        top: 50%;
+    }
+}
+*/
