@@ -43,7 +43,7 @@
                 <a href="#" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="#" target="_blank">
+                <a href="mailto:contact@maximilian-mewes.de" target="_blank">
                     <i class="far fa-envelope"></i>
                 </a>
             </div>
