@@ -5,12 +5,16 @@
 @section('content')
     <div class="wrapper">
         <div class="form-container">
-            <h1> Create a Project </h1>
+            <h1> Add a Project </h1>
 
             <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                
                 @include('projects.form')
 
-                <input type="submit" value="Hinzufügen">
+                <button type="submit">
+                    <i class="fas fa-plus"></i>
+                    Add Project
+                </button>
             </form>
         </div>
     </div>

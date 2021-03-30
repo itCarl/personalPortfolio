@@ -39,7 +39,8 @@
 }
 
 input,
-textarea {
+textarea,
+button {
     border: 0;
     outline: 0;
 }
@@ -311,6 +312,11 @@ nav ul {
 /*
     TODO refactor the whole FORMS appartment
 */
+
+form {
+    position: relative;
+}
+
 .form-container {
     /* temp vars*/
     --primary: #342D33;
@@ -356,6 +362,21 @@ nav ul {
 .form__field[type="file"] {
     background-color: transparent;
 }
+
+input[type="submit"],
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 1.2em;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    font-size: 1.05em;
+    padding: 1.1em;
+}
+
 
 .form__field::placeholder { /* first part of the trick */
     color: transparent;

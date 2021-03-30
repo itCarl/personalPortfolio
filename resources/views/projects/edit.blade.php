@@ -11,7 +11,10 @@
                 {{ method_field('PUT') }}
                 @include('projects.form')
 
-                <input type="submit" value="Bearbeiten">
+                <button type="submit">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                </button>
             </form>
         </div>
     </div>
