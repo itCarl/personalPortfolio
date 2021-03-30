@@ -40,7 +40,7 @@
         </section>
         <section id="social-links">
             <div class="links">
-                <a href="#" target="_blank">
+                <a href="https://github.com/itCarl" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="mailto:contact@maximilian-mewes.de" target="_blank">
