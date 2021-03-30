@@ -14,6 +14,9 @@
         </form>
     </div>
     <div class="utility-bar-item">
+        <a href="{{ url('/') }}"> Home </a>
+    </div>
+    <div class="utility-bar-item">
         <a href="{{ url()->previous() }}"> Back </a>
     </div>
 </div>        

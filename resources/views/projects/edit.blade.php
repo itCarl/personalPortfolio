@@ -6,7 +6,7 @@
     <div class="wrapper">
         <div>
             <h1> Edit "{{ $project->title }}" </h1>
-            <form action="{{ route('projects.update', ['project' => $project]) }}" method="POST" autocomplete="off">
+            <form action="{{ route('projects.update', ['project' => $project]) }}" enctype="multipart/form-data" method="POST" autocomplete="off">
                 
                 {{ method_field('PUT') }}
                 @include('projects.form')

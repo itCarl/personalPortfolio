@@ -7,7 +7,7 @@
         <div>
             <h1> Create a Project </h1>
 
-            <form action="{{ route('projects.store') }}" method="POST" autocomplete="off">
+            <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                 @include('projects.form')
 
                 <input type="submit" value="Hinzufügen">

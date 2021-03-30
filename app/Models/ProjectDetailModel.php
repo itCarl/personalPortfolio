@@ -24,5 +24,6 @@ class ProjectDetailModel extends Model
         'short_description',
         'description',
         'tags',
+        'image',
     ];
 }

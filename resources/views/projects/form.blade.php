@@ -14,6 +14,11 @@
     <div class="error">{{ $errors->first('description') }}</div>
 </div>
 <div class="form__group field">
+    <input type="file" class="form__field" name="image" id='image' />
+    <label for="image" class="form__label"> Projekt Bild </label>
+    <div class="error">{{ $errors->first('image') }}</div>
+</div>
+<div class="form__group field">
     <input type="text" value="{{ old('tags') ?? $project->tags }}" class="form__field" placeholder="Tags" name="tags" id='tags' required />
     <label for="name" class="form__label"> Tags </label>
     <div class="error">{{ $errors->first('tags') }}</div>

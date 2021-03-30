@@ -22,6 +22,8 @@ class CreateProjectDetailsTable extends Migration
             $table->text('description');
             $table->text('tags')
                   ->nullable();
+            $table->string('image')
+                  ->nullable();
             $table->timestamps();
         });
     }

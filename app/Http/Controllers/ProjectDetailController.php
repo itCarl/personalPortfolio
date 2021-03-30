@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProjectDetailModel;
+use Intervention\Image\Facades\Image;
 
 class ProjectDetailController extends Controller
 {
@@ -45,7 +46,9 @@ class ProjectDetailController extends Controller
      */
     public function store(Request $request)
     {
-       ProjectDetailModel::create($this->validateRequest());
+        $project = ProjectDetailModel::create($this->validateRequest());
+
+        $this->storeImage($project);
 
         return redirect('projects');
     }
@@ -87,6 +90,8 @@ class ProjectDetailController extends Controller
         // $project = ProjectDetailModel::findOrFail($id);
         $project->update($this->validateRequest());
 
+        $this->storeImage($project);
+
         return redirect('projects/' . $project->id);
     }
 
@@ -108,6 +113,19 @@ class ProjectDetailController extends Controller
             'short_description' => 'required|max:100',
             'description'       => 'required',
             'tags'              => 'required',
+            'image'             => 'sometimes|file|image|max:5000',
         ]);
+    }
+
+    private function storeImage($project)
+    {
+        if (request()->has('image')) {
+            $project->update([
+                'image' => request()->image->store('uploads', 'public'),
+            ]);
+            
+            $image = Image::make(public_path('storage/' . $project->image))->fit(300, 300);
+            $image->save();
+        }
     }
 }

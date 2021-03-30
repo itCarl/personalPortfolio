@@ -11,8 +11,12 @@
             <div class="masonry-item">
                 <a href="#">
                     <figure>
-                        <img src="https://picsum.photos/<?= rand(200, 350) ?>/<?= rand(300, 350) ?>?image=<?= rand(1, 10) ?>" alt="Dummy Image">
-                        <div class="masonry-item-details">
+                        @empty($p->image)
+                            <img src="https://picsum.photos/<?= rand(200, 350) ?>/<?= rand(300, 350) ?>?image=<?= rand(1, 10) ?>" alt="Dummy Image">
+                        @else
+                            <img src="{{ 'storage/' . $p->image }}">
+                        @endempty
+                            <div class="masonry-item-details">
                             <h3 class="content-title"> {{ $p->title }} </h3>
                             <p class="content-text"> {{ $p->short_description }} </p>
                         </div>
