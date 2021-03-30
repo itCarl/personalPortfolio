@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="wrapper">
-        <div>
+        <div class="form-container">
             <h1> Edit "{{ $project->title }}" </h1>
             <form action="{{ route('projects.update', ['project' => $project]) }}" enctype="multipart/form-data" method="POST" autocomplete="off">
                 

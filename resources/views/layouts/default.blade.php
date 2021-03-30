@@ -31,7 +31,7 @@
 
     @auth
         {{-- Get a "Admin" bar when logged in --}}
-        @include('includes.backend')
+        {{-- @include('includes.backend') --}}
     @endauth
 
 

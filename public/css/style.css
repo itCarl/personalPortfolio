@@ -38,6 +38,16 @@
     padding: 0;
 }
 
+input,
+textarea {
+    border: 0;
+    outline: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
 img {
     max-width: 100%;
 }
@@ -298,72 +308,111 @@ nav ul {
     /**
      *      5.1 Forms
      */
+/*
+    TODO refactor the whole FORMS appartment
+*/
+.form-container {
+    /* temp vars*/
+    --primary: #342D33;
+    --accent: #fff;
+
+    /*background-color: #342D33;*/
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 2em;
+    padding: 2em;
+}
+
+.form-container h1 {
+    text-align: center;
+    color: var(--primary);
+    padding-bottom: 1.5em;
+}
+
 .form__group {
+    --label-no-placeholder: 22px;
+    --label-placeholder: -12px;
+
+    display: flex; 
+    flex-grow: 1;
     position: relative;
-    padding: 10px 0 0;
-    width: 75%;
-    margin-bottom: .7rem;
+    padding: 10px 0 0 0;
+    margin-bottom: 2rem;
 }
 
 .form__field {
     width: 100%;
-    border: 0;
-    border-bottom: 2px solid #9b9b9b;
-    outline: 0;
     font-size: 1.1rem;
-    color: var(--clr-primary);
-    padding: 12px 0 0 0;
-    transition: border-color 0.3s;
+    color: var(--accent);
+    background: var(--primary);
+    padding: 1em;
+    transition: top, font-size, color, padding 0.3s;
 }
 
-.form__field::placeholder {
+.form__field textarea {
+    min-height: 3rem;
+}
+
+.form__field[type="file"] {
+    background-color: transparent;
+}
+
+.form__field::placeholder { /* first part of the trick */
     color: transparent;
 }
 
 .form__field:placeholder-shown ~ .form__label {
     font-size: 1.1rem;
     cursor: text;
-    top: 20px;
+    top: var(--label-no-placeholder);
+    color: var(--accent);
+    padding: 0 0 0 .5em;
 }
 
 .form__label {
     position: absolute;
-    top: 0;
+    top: var(--label-placeholder);
     display: block;
     transition: 0.2s;
     font-size: 1rem;
+    color: var(--primary);
 }
 
 .form__field:focus {
-    padding-bottom: 6px;
+    padding: 6px 0;
+    padding: 1em;
     font-weight: 700;
+    /*
     border-width: 3px;
     border-image: linear-gradient(to right, var(--clr-link-primary) 30%, #11998e);
     border-image-slice: 1;
+    */
 }
 
 .form__field:focus ~ .form__label {
     position: absolute;
-    top: 0;
+    top: var(--label-placeholder);
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: var(--clr-link-primary);
+    padding: 0;
+    color: var(--primary);
     font-weight: 700;
 }
 
-input.form__field:read-only {
+.form__field:read-only {
     color: rgba(255, 255, 255, 0.2);
 }
 
 /* css magic */
-input.form__field:read-only + label.form__label::after {
+.form__field:read-only + label.form__label::after {
     content: " (read-only)";
     color: rgba(255, 255, 255, 0.15);
 }
 
 /* reset input  */
-.form__field:required, .form__field:invalid {
+.form__field:required, 
+.form__field:invalid {
     box-shadow: none;
 }
 
@@ -372,6 +421,8 @@ input.form__field:read-only + label.form__label::after {
     padding: 1em;
     color: #fff;
 }
+
+/* TODO make upload button more beautiful */
 
     /**
      *      5.2 Buttons

@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="wrapper">
-        <div>
+        <div class="form-container">
             <h1> Create a Project </h1>
 
             <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
