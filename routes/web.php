@@ -23,7 +23,8 @@ Route::resource('projects', 'ProjectDetailController');
 // but i only want a hidden login available so i do the auth routes manually.
 // disabeling certain routes gets available with laravel 5.7 and higher
 
-$login_uri = '4ebd0208-8328-5d69-8c44-ec50939c0967';
+//$login_uri = '4ebd0208-8328-5d69-8c44-ec50939c0967';
+$login_uri = 'login';
 
 // Authentication Routes...
 $this->get($login_uri, 'Auth\LoginController@showLoginForm')->name('login');
