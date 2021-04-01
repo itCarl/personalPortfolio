@@ -70,7 +70,7 @@ body::before {
     height: 100vh; /* Fallback */
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
-    font-size: 15px;
+    font-size: clamp(13px, 3vw, 15px);
 }
 
 body {
@@ -504,5 +504,12 @@ div#back a {
     }
     section#social-links {
         margin-top: 3em;
+    }
+    .about p {
+        padding: 0;
+    }
+
+    .about p+p {
+        padding-top: 1em;
     }
 }
